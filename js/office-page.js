@@ -270,7 +270,7 @@ async function draw(office) {
   }
 }
 
-/** POST /api/v1/images, the same request as examples/06-image.js. */
+/** POST /api/v1/images: OpenRouter's image endpoint, one picture per call. */
 async function requestImage(prompt, { model, aspectRatio }) {
   if (typeof OPENROUTER_API_KEY === 'undefined' || OPENROUTER_API_KEY.startsWith('YOUR_')) {
     throw new Error('No API key. Copy js/config.local.example.js to js/config.local.js and paste your key in.');

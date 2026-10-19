@@ -89,7 +89,7 @@ async function post(path, body) {
   }
 }
 
-// The same bodies the guide sends: chat() in js/openrouter.js, and /api/v1/images as in examples/06-image.js.
+// The same bodies the guide sends: chat() in js/openrouter.js, and /api/v1/images as in js/office-page.js.
 const send = (messages, { model, maxTokens, temperature, responseFormat }) =>
   post('chat/completions', { model, messages, max_tokens: maxTokens, temperature, response_format: responseFormat });
 const sendImage = (prompt, { model, aspectRatio }) => post('images', { model, prompt, n: 1, aspect_ratio: aspectRatio });
