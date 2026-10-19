@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Represent! Compare the Two Sides</title>
+  <script>
+    // Comparing the two sides is now a tab of the voter guide. Old links still work:
+    // compare.html?replay=s12-final#prop-45 opens guide.html?replay=s12-final#compare/prop-45.
+    location.replace(`guide.html${location.search}#compare${location.hash ? '/' + location.hash.slice(1) : ''}`);
+  </script>
+</head>
+<body>
+  <p><a href="guide.html#compare">Compare the two sides</a> is now a tab of the voter guide.</p>
+</body>
+</html>

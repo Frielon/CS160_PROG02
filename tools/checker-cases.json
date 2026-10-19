@@ -1,0 +1,244 @@
+{
+ "about": "Labeled cases for tools/eval-checker.mjs. real = misreadings the renderer produced in testing; planted = one error put into a correct text; negative = correct text (any flag is a false alarm unless reviewed otherwise). match = regex a flagged claim must hit to count as caught.",
+ "cases": [
+  {
+   "id": "P40-real-simplest",
+   "measure": "prop-40",
+   "kind": "real",
+   "text": "Imagine a family that needs help. The state has less money for health care. It also has less money for schools and food help. This measure says rich people with more than $1 billion will pay a tax. It is a one-time tax. They will pay 5% of their wealth over $1 billion. This money will go to health care, schools, and food help.\n\nThe measure says 90% of the money is for health care. This includes helping Medi-Cal and other health programs. It also helps safety net health providers. The other 10% is for schools and food help. This includes help for CalFresh and school meals.\n\nThe state can spend up to $22.5 billion each year on health care. It can spend up to $2.5 billion each year on schools and food help. The state can also spend up to $50 million to help the tax office start. This money must be paid back.\n\nThe tax is for the year 2026. People who owe this tax can choose to pay it all at once. Or they can pay it in five equal parts over five years. If they choose to pay over time, they will pay an extra 7.5% each year on what they still owe.\n\nThe measure also says that rich people cannot get a tax break for paying this wealth tax. The state can take legal action to make sure people pay this tax. The measure also says that if courts find parts of it are not allowed, other parts can still be used. The state can also change the tax rules if needed.",
+   "errors": [
+    {
+     "what": "5% of wealth over $1 billion (it is the whole net worth)",
+     "match": "over \\$?1 billion"
+    }
+   ],
+   "length": "standard"
+  },
+  {
+   "id": "P40-real-everyday",
+   "measure": "prop-40",
+   "kind": "real",
+   "text": "This measure creates a one-time tax on the wealth of California billionaires. The tax is 5% of a billionaire's net worth above $1 billion. This tax applies to individuals and trusts with $1 billion or more in net worth. The tax is for the 2026 tax year.\n\nThe measure says that billionaires pay a small percentage of their wealth in taxes compared to other Californians. It also says that this tax will help fund health care, public education, and food assistance programs. These programs face funding cuts.\n\nMoney collected from the tax goes into a special fund. Ninety percent of the money is for health care programs. Ten percent is for education and food assistance programs. The Legislature can spend up to $22.5 billion each year on health care and $2.5 billion on education and food assistance from this fund.\n\nTaxpayers can choose to pay the tax in five equal yearly installments. The first payment is due with their 2026 income taxes. Each yearly installment payment will also have a 7.5% yearly charge.\n\nThe measure defines \"net worth\" as the value of all assets minus all debts. It lists rules for valuing assets and debts. It also allows for an optional deferral account for taxpayers who cannot easily pay the tax. This account allows them to defer payment under certain conditions.\n\nThe measure also allows for expedited court review of its validity. It sets rules for how the tax is administered and enforced. It also states that if this measure conflicts with another measure on the same ballot that taxes billionaire wealth, this measure will prevail if it receives more votes.",
+   "errors": [
+    {
+     "what": "5% of net worth above $1 billion (it is the whole net worth)",
+     "match": "above \\$?1 billion"
+    }
+   ],
+   "length": "standard"
+  },
+  {
+   "id": "P40-real-headline",
+   "measure": "prop-40",
+   "kind": "real",
+   "text": "This measure imposes a one-time 5% tax on California billionaires' net worth over $1 billion to fund health, education, and food programs.",
+   "errors": [
+    {
+     "what": "5% tax on net worth over $1 billion",
+     "match": "over \\$?1 billion"
+    }
+   ],
+   "length": "headline"
+  },
+  {
+   "id": "P43-real-majority",
+   "measure": "prop-43",
+   "kind": "real",
+   "text": "Measure Would Require Two-Thirds Vote for Local Special Taxes.\n\nStarting January 1, 2027, this measure would require local governments to get approval from two-thirds of voters before they can create, extend, or increase any special tax. A special tax is a tax that raises money for a specific purpose. This rule would apply even if voters try to create the tax using the initiative process. The measure would not change existing rules that allow special taxes if approved by a majority vote for certain purposes. It also would not change rules about property taxes. Local governments would still be able to impose property taxes as allowed by current law.",
+   "errors": [
+    {
+     "what": "invented: special taxes approved by a majority vote",
+     "match": "majority"
+    }
+   ]
+  },
+  {
+   "id": "P43-real-baseline",
+   "measure": "prop-43",
+   "kind": "real",
+   "text": "This rule changes how local taxes are approved.\n\nImagine your town needs money for a new park. Before this rule, your town could vote to tax everyone a little bit. Most people had to agree for the tax to pass.\n\nThis rule says that starting January 1, 2027, your town must get a two-thirds vote. This means more people must agree. If they don't get enough votes, they cannot add the tax. This rule also applies if people try to vote for a tax themselves.\n\nThe rule also says towns cannot tax homes based on their value. This is only allowed if a different rule says it is okay.\n\nThis rule applies to all local towns. It also applies to special taxes.",
+   "errors": [
+    {
+     "what": "invented current law: most people had to agree",
+     "match": "most people|before this rule"
+    }
+   ]
+  },
+  {
+   "id": "P43-real-flip",
+   "measure": "prop-43",
+   "kind": "real",
+   "text": "Imagine your town wants to collect more money.\n\nStarting January 1, 2027, your town cannot ask for a new special tax. Your town also cannot make a special tax bigger. Your town cannot make a special tax last longer. This is true even if people vote for it.\n\nThere are some exceptions. Your town can still collect taxes if it follows other rules. These rules are in Section 4 of this article. They are also in Section 2(d) of Article XIII C. And they are in Section 3(a)(2) of Article XIII D.\n\nYour town also cannot put a tax on homes and land. This is called an ad valorem tax. This is true even if people vote for it.\n\nThere is one exception. Your town can put a tax on homes and land if it follows Section 3(a)(1) of Article XIII D.\n\nThe words \"local government\" and \"special tax\" mean the same thing as in Section 1 of Article XIII C.",
+   "errors": [
+    {
+     "what": "flipped: no special tax at all (it is: only with two-thirds)",
+     "match": "cannot ask for a new special tax|cannot make a special tax|even if people vote"
+    }
+   ]
+  },
+  {
+   "id": "P4-real-100",
+   "measure": "prop-4",
+   "kind": "real",
+   "text": "Imagine a town where people running for mayor can get public money. This rule would let them use public money to talk to voters. It would help people who are not rich run for office. People running for office would have to follow spending limits. They would need to show they have support from many people. They would need to get small donations from at least 100 people. The state or city would set these rules. This rule also says that people from other countries cannot give money to help or hurt a vote. If someone breaks this rule, they could pay a fine.",
+   "errors": [
+    {
+     "what": "invented number: at least 100 people",
+     "match": "100"
+    }
+   ],
+   "length": "short"
+  },
+  {
+   "id": "P45-real-park",
+   "measure": "prop-45",
+   "kind": "real",
+   "text": "Imagine your town needs a new park. This rule makes it faster to build parks. It also helps build homes and clean water projects. The rule sets deadlines for the government. It makes the building process simpler. This rule applies to many kinds of building projects. It does not change environmental rules. It helps get needed projects done sooner. The rule applies to projects that start after it becomes law. It helps make things like housing and clean energy more affordable.",
+   "errors": [
+    {
+     "what": "parks are not an essential project",
+     "match": "park"
+    }
+   ],
+   "length": "short"
+  },
+  {
+   "id": "P40-plant-yearly",
+   "measure": "prop-40",
+   "kind": "planted",
+   "text": "This measure would create a 5% yearly tax on the net worth of California billionaires. The tax would apply to individuals and trusts with over $1 billion in net worth. The money collected would go into a special fund. Ninety percent of the money would fund health care programs. Ten percent would fund education and food assistance programs. The measure also sets rules for how net worth is calculated and allows for optional deferral accounts for some taxpayers. It also sets up a process for expedited legal review of the measure.",
+   "errors": [
+    {
+     "what": "yearly (it is one-time)",
+     "match": "yearly"
+    }
+   ]
+  },
+  {
+   "id": "P40-plant-half",
+   "measure": "prop-40",
+   "kind": "planted",
+   "text": "This measure would create a one-time 5% tax on the net worth of California billionaires. The tax would apply to individuals and trusts with over $1 billion in net worth. The money collected would go into a special fund. Half of the money would fund health care programs. The other half would fund education and food assistance programs. The measure also sets rules for how net worth is calculated and allows for optional deferral accounts for some taxpayers. It also sets up a process for expedited legal review of the measure.",
+   "errors": [
+    {
+     "what": "half to health care (it is 90%)",
+     "match": "half"
+    }
+   ]
+  },
+  {
+   "id": "P40-plant-excess",
+   "measure": "prop-40",
+   "kind": "planted",
+   "text": "Prop 40 would create a one-time tax on Californians with more than $1 billion in net worth. The tax is 5% of the part of a person's net worth above $1 billion. Taxpayers could pay it with their 2026 income taxes or in five yearly installments, with an extra 7.5% charge each year on the unpaid balance. The money would go into a special fund: 90% for health care and 10% for education and food assistance.",
+   "errors": [
+    {
+     "what": "only the part above $1 billion",
+     "match": "above \\$?1 billion"
+    }
+   ]
+  },
+  {
+   "id": "P43-plant-majority",
+   "measure": "prop-43",
+   "kind": "planted",
+   "text": "Starting January 1, 2027, a local government could not create, extend or raise a special tax unless a majority of voters approve it. This also applies when voters themselves propose the tax through an initiative. Some exceptions in other parts of the state constitution still apply. Local governments also could not impose taxes on real property based on its value, except as one part of the constitution allows.",
+   "errors": [
+    {
+     "what": "majority (it is two-thirds)",
+     "match": "majority"
+    }
+   ]
+  },
+  {
+   "id": "P43-plant-outside",
+   "measure": "prop-43",
+   "kind": "planted",
+   "text": "Starting January 1, 2027, a local government could not create, extend or raise a special tax unless two-thirds of voters approve it. This also applies when voters themselves propose the tax through an initiative. Some exceptions in other parts of the state constitution still apply. Local governments also could not impose taxes on real property based on its value, except as one part of the constitution allows. This means it applies to cities, counties, and special districts.",
+   "errors": [
+    {
+     "what": "outside knowledge: cities, counties, special districts",
+     "match": "cities, counties"
+    }
+   ]
+  },
+  {
+   "id": "P4-plant-earmark",
+   "measure": "prop-4",
+   "kind": "planted",
+   "text": "Prop 4 would rewrite the state law on public money for election campaigns. Today's rule bars officials and candidates from spending or accepting public money to seek office, except through a dedicated fund. Under Prop 4, candidates could also use money set aside for education, transportation, or public safety. Candidates who get public funds must follow spending limits and meet strict criteria, such as getting small contributions from a set number of residents. They could not use public funds for legal defense fees or fines.",
+   "errors": [
+    {
+     "what": "earmarked funds allowed (they are banned)",
+     "match": "education"
+    }
+   ]
+  },
+  {
+   "id": "P45-plant-days",
+   "measure": "prop-45",
+   "kind": "planted",
+   "text": "Prop 45 would add the Building an Affordable California Act to state law. It applies only to essential housing, clean energy, water, public health, public safety, broadband, education facility and transportation projects. It does not exempt these projects from environmental review, but it sets deadlines for that review. For a project that needs an environmental impact report, the local lead agency must decide whether to certify the report within 90 days after the application is complete. The Legislature could change the act only with a two-thirds vote of each house, and only in ways that further its purposes.",
+   "errors": [
+    {
+     "what": "90 days (it is 365)",
+     "match": "90 days"
+    }
+   ]
+  },
+  {
+   "id": "P45-plant-scope",
+   "measure": "prop-45",
+   "kind": "planted",
+   "text": "Prop 45 would add the Building an Affordable California Act to state law. It applies to every construction project in California. It does not exempt these projects from environmental review, but it sets deadlines for that review. For a project that needs an environmental impact report, the local lead agency must decide whether to certify the report within 365 days after the application is complete. The Legislature could change the act only with a two-thirds vote of each house, and only in ways that further its purposes.",
+   "errors": [
+    {
+     "what": "every project (only essential projects)",
+     "match": "every construction project"
+    }
+   ]
+  },
+  {
+   "id": "N40-real",
+   "measure": "prop-40",
+   "kind": "negative",
+   "text": "This measure would create a one-time 5% tax on the net worth of California billionaires. The tax would apply to individuals and trusts with over $1 billion in net worth. The money collected would go into a special fund. Ninety percent of the money would fund health care programs. Ten percent would fund education and food assistance programs. The measure also sets rules for how net worth is calculated and allows for optional deferral accounts for some taxpayers. It also sets up a process for expedited legal review of the measure.",
+   "errors": []
+  },
+  {
+   "id": "N40-whole",
+   "measure": "prop-40",
+   "kind": "negative",
+   "text": "Prop 40 would create a one-time tax on Californians with more than $1 billion in net worth. The tax is 5% of a person's whole net worth, with a lower rate for people worth between $1 billion and $1.1 billion. Taxpayers could pay it with their 2026 income taxes or in five yearly installments, with an extra 7.5% charge each year on the unpaid balance. The money would go into a special fund: 90% for health care and 10% for education and food assistance.",
+   "errors": []
+  },
+  {
+   "id": "N43",
+   "measure": "prop-43",
+   "kind": "negative",
+   "text": "Starting January 1, 2027, a local government could not create, extend or raise a special tax unless two-thirds of voters approve it. This also applies when voters themselves propose the tax through an initiative. Some exceptions in other parts of the state constitution still apply. Local governments also could not impose taxes on real property based on its value, except as one part of the constitution allows.",
+   "errors": []
+  },
+  {
+   "id": "N45",
+   "measure": "prop-45",
+   "kind": "negative",
+   "text": "Prop 45 would add the Building an Affordable California Act to state law. It applies only to essential housing, clean energy, water, public health, public safety, broadband, education facility and transportation projects. It does not exempt these projects from environmental review, but it sets deadlines for that review. For a project that needs an environmental impact report, the local lead agency must decide whether to certify the report within 365 days after the application is complete. The Legislature could change the act only with a two-thirds vote of each house, and only in ways that further its purposes.",
+   "errors": []
+  },
+  {
+   "id": "N4",
+   "measure": "prop-4",
+   "kind": "negative",
+   "text": "Prop 4 would rewrite the state law on public money for election campaigns. Today's rule bars officials and candidates from spending or accepting public money to seek office, except through a dedicated fund. Under Prop 4, the ban would cover only money set aside for education, transportation, or public safety. Candidates who get public funds must follow spending limits and meet strict criteria, such as getting small contributions from a set number of residents. They could not use public funds for legal defense fees or fines.",
+   "errors": []
+  },
+  {
+   "id": "N40-near",
+   "measure": "prop-40",
+   "kind": "negative",
+   "text": "Prop 40 would create a one-time tax on billionaires, meaning people with a net worth of $1 billion or more. They would pay 5% of their net worth, which is everything they own minus their debts. People worth just over $1 billion would pay a lower rate. Most of the money would go to health care.",
+   "errors": []
+  }
+ ]
+}

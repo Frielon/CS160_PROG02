@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Represent! Down-Ballot Offices</title>
+  <script>
+    // The offices are now a tab of the voter guide: office.html opens guide.html#offices.
+    location.replace(`guide.html#offices${location.hash ? '/' + location.hash.slice(1) : ''}`);
+  </script>
+</head>
+<body>
+  <p><a href="guide.html#offices">Down-ballot offices</a> is now a tab of the voter guide.</p>
+</body>
+</html>

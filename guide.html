@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Represent! Voter Guide</title>
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/compare.css">
+  <link rel="stylesheet" href="css/office.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <span class="brand-name">Represent!</span>
+    <span class="brand-sub" id="election">California General Election, November 3, 2026</span>
+  </div>
+  <nav class="tabs" aria-label="Parts of the guide">
+    <a href="#read" data-tab="read">Read a measure</a>
+    <a href="#compare" data-tab="compare">Compare the two sides</a>
+    <a href="#offices" data-tab="offices">Down-ballot offices</a>
+  </nav>
+  <details class="meter key-missing" id="key-missing" hidden>
+    <summary>No API key</summary>
+    <div class="meter-panel">
+      <p class="small">The AI parts of the guide need an OpenRouter key. Copy <code>js/config.local.example.js</code> to
+        <code>js/config.local.js</code>, paste your key into <code>OPENROUTER_API_KEY</code>, and reload.</p>
+      <p class="small muted">Without one you can still read the certified text, the printed arguments, the topic counts and
+        what the data pack says about each office: none of those call a model.</p>
+    </div>
+  </details>
+  <details class="meter" id="meter">
+    <summary>Session cost <b id="meter-total">$0.0000</b> <span id="meter-calls">0 calls</span></summary>
+    <div class="meter-panel" id="meter-panel"></div>
+  </details>
+</header>
+
+<main>
+  <!-- Functionality 1: js/guide.js -->
+  <section class="tab-panel" id="tab-read" aria-labelledby="read-title">
+    <div class="intro">
+      <h1 id="read-title" tabindex="-1">Read a ballot measure your way</h1>
+      <p>Pick a measure, a reading level and a length. “As written” is the certified legal text.
+        Every other version is written by an AI model from that legal text, measured by our code, and labeled as AI-generated.
+        What each side argues about it is under <a href="#compare">Compare the two sides</a>.</p>
+    </div>
+
+    <nav class="picker" id="read-picker" aria-label="Ballot measures"></nav>
+
+    <section class="topics" id="topics" aria-label="Topics of concern"></section>
+
+    <div class="workspace">
+      <aside class="controls" id="controls" aria-label="How to show it"></aside>
+      <section class="output" id="output" aria-live="polite">
+        <p class="muted">Loading data/datapack.json…</p>
+      </section>
+    </div>
+  </section>
+
+  <!-- Functionality 2: js/compare-view.js -->
+  <section class="tab-panel" id="tab-compare" aria-labelledby="compare-title" hidden>
+    <div class="intro">
+      <h1 id="compare-title" tabindex="-1">Compare the two sides</h1>
+      <p>The guide prints four documents for every measure: an argument for it, an argument against it, and one rebuttal from each side.
+        Pick a measure to see what each side claims, side by side, and how the two sides answered each other.
+        An AI model pulls out the claims; our code checks every quote against the printed text. Nothing here says which side is right.</p>
+    </div>
+
+    <nav class="picker" id="compare-picker" aria-label="Ballot measures"></nav>
+
+    <section id="compare-main" aria-live="polite">
+      <p class="muted">Loading data/datapack.json…</p>
+    </section>
+  </section>
+
+  <!-- Functionality 3: js/office-page.js -->
+  <section class="tab-panel" id="tab-offices" aria-labelledby="offices-title" hidden>
+    <div class="intro">
+      <h1 id="offices-title" tabindex="-1">The offices at the bottom of your ballot</h1>
+      <p>These five seats decide real things that most voters can’t name. Pick one to see exactly what our data pack says it decides.
+        An AI model can explain that in everyday words, including what the office does <b>not</b> decide, and draw a picture of something it affects.
+        Everything the AI writes or draws is labeled as AI-generated.</p>
+    </div>
+
+    <nav class="picker offices" id="office-picker" aria-label="Offices"></nav>
+
+    <section id="office-main" aria-live="polite">
+      <p class="muted">Loading data/datapack.json…</p>
+    </section>
+  </section>
+</main>
+
+<footer class="foot">
+  CS160 PROG 02 class project. Not official voter information; do not rely on it to vote.
+  Facts come only from <code>data/datapack.json</code>, built from the Official Voter Information Guide; its office descriptions come from the PROG 02 handout.
+  The <a href="datapack.html">data pack explorer</a> shows every field of it, with no AI.
+</footer>
+
+<script src="js/config.local.js"></script>
+<script src="js/openrouter.js"></script>
+<script src="js/fk.js"></script>
+<script src="js/dom.js"></script>
+<script src="js/legal-text.js"></script>
+<script src="js/prompts.js"></script>
+<script src="js/checker.js"></script>
+<script src="js/topics.js"></script>
+<script src="js/compare.js"></script>
+<script src="js/office.js"></script>
+<script src="js/app.js"></script>
+<!-- One module per tab, so each tab's own names (state, draw, ...) stay its own. -->
+<script type="module" src="js/guide.js"></script>
+<script type="module" src="js/compare-view.js"></script>
+<script type="module" src="js/office-page.js"></script>
+</body>
+</html>
